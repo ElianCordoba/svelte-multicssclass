@@ -14,8 +14,10 @@
     "test": "jest",
     "prebuild": "rimraf ./dist",
     "build": "tsc -p .",
+    "watch": "tsc --watch --incremental",
     "prepare": "pnpm build && rimraf ./dist/test",
-    "format": "prettier --write --plugin-search-dir=. ."
+    "format": "prettier --write --plugin-search-dir=. .",
+    "bench": "node dist/bench/bench.js"
   },
   "devDependencies": {
     "@types/jest": "^29.5.1",
@@ -34,5 +36,9 @@
     "svelte",
     "sveltekit",
     "svelte-kit"
-  ]
+  ],
+  "dependencies": {
+    "@types/benchmark": "^2.1.2",
+    "benchmark": "^2.1.4"
+  }
 }
